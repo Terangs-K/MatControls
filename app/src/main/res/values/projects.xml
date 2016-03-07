@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="projectlist">
+        <item>NSRP Project</item>
+        <item>Jazzan Project</item>
+        <item>FSES Project</item>
+        <item>KNPC Project</item>
+        <item>P-PDH Project</item>
+        <item>RRE Project</item>
+        <item>TEST Project</item>
+    </string-array>
+
+</resources>
