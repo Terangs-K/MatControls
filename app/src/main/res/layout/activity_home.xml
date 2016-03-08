@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#ff5f00">
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Search"/>
+
+        <TextView
+            android:id="@+id/textTop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnSearch"
+            android:text="14037d\nFortHills Secondary Extraction Project\nCV9242 / TOMAS"/>
+
+        <Button
+            android:id="@+id/btnAccount"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnInfo"
+            android:text="A"/>
+
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnExit"
+            android:text="I"/>
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="X"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/relTop"
+        android:layout_above="@+id/linBottom"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Punch"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnPunchNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Punch"/>
+
+            <Button
+                android:id="@+id/btnPunchNotCls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Not Cleared Punch"/>
+
+            <Button
+                android:id="@+id/btnPunchCls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cleared Punch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Data"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnSyncEntity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entity Sync"/>
+
+            <Button
+                android:id="@+id/btnSyncPunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Punch Sync"/>
+
+            <Button
+                android:id="@+id/btnSyncUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Sync"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#ff5f00"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"/>
+
+        <Button
+            android:id="@+id/btnNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Noti"/>
+
+        <Button
+            android:id="@+id/btnMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MSG"/>
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="IMG"/>
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CAM"/>
+
+        <Button
+            android:id="@+id/btnMarkup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MARK"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

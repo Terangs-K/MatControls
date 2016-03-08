@@ -2,40 +2,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Material Control Application"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"/>
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <Spinner
         android:id="@+id/listSpin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/project_prompt"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="50dp"/>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Insert Your ID"
-        android:layout_marginTop="100dp"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp">
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:password="true"
-        android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert Your ID"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:password="true"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Login"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Keep me signed in"
+        android:layout_gravity="end"/>
+
 </LinearLayout>
