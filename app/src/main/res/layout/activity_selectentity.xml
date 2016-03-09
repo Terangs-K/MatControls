@@ -59,71 +59,150 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Punch"
+                android:text="Entity"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_marginBottom="40dp"/>
 
-            <Button
-                android:id="@+id/btnPunchNew"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Punch"/>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-            <Button
-                android:id="@+id/btnPunchNotCls"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Unit"/>
+
+                <Spinner
+                    android:id="@+id/listUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/project_unit"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Not Cleared Punch"/>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-            <Button
-                android:id="@+id/btnPunchCls"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="System"/>
+
+                <Spinner
+                    android:id="@+id/listSystem"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/project_system"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cleared Punch"/>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Sub System"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <Spinner
+                    android:id="@+id/listSubSystem"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/project_subsystem"/>
 
-            <TextView
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Basic Data"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-            <Button
-                android:id="@+id/btnSyncEntity"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Item Group"/>
+
+                <Spinner
+                    android:id="@+id/listItemGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/project_itemgroup"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Entity Sync"/>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
 
-            <Button
-                android:id="@+id/btnSyncPunch"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Item"/>
+
+                <Spinner
+                    android:id="@+id/listItem"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/project_item"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Punch Sync"/>
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnSyncUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User Sync"/>
+                <Button
+                    android:id="@+id/btnBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="OK"/>
+
+                <Button
+                    android:id="@+id/btnSelectEntity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cancel"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

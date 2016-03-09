@@ -10,4 +10,44 @@
         <item>TEST Project</item>
     </string-array>
 
+    <string-array name="unitlist">
+        <item>UNIT 01</item>
+        <item>UNIT 02</item>
+        <item>UNIT 03</item>
+        <item>UNIT 04</item>
+        <item>UNIT 05</item>
+    </string-array>
+
+    <string-array name="systemlist">
+        <item>SYSTEM 01</item>
+        <item>SYSTEM 02</item>
+        <item>SYSTEM 03</item>
+        <item>SYSTEM 04</item>
+        <item>SYSTEM 05</item>
+    </string-array>
+
+    <string-array name="subsystemlist">
+        <item>SUBSYSTEM 01</item>
+        <item>SUBSYSTEM 02</item>
+        <item>SUBSYSTEM 03</item>
+        <item>SUBSYSTEM 04</item>
+        <item>SUBSYSTEM 05</item>
+    </string-array>
+
+    <string-array name="itemgrouplist">
+        <item>ITEMGROUP 01</item>
+        <item>ITEMGROUP 02</item>
+        <item>ITEMGROUP 03</item>
+        <item>ITEMGROUP 04</item>
+        <item>ITEMGROUP 05</item>
+    </string-array>
+
+    <string-array name="itemlist">
+        <item>ITEM 01</item>
+        <item>ITEM 02</item>
+        <item>ITEM 03</item>
+        <item>ITEM 04</item>
+        <item>ITEM 05</item>
+    </string-array>
+
 </resources>

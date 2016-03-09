@@ -60,70 +60,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Punch"
+                android:text="Select Entity"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_marginBottom="50dp"/>
 
             <Button
-                android:id="@+id/btnPunchNew"
+                android:id="@+id/btnBarcode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Punch"/>
+                android:text="Barcode Scanner (Entitiy)"
+                android:layout_marginBottom="30dp"/>
 
             <Button
-                android:id="@+id/btnPunchNotCls"
+                android:id="@+id/btnSelectEntity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Not Cleared Punch"/>
-
-            <Button
-                android:id="@+id/btnPunchCls"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cleared Punch"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Basic Data"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:gravity="center"/>
-
-            <Button
-                android:id="@+id/btnSyncEntity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Entity Sync"/>
-
-            <Button
-                android:id="@+id/btnSyncPunch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Punch Sync"/>
-
-            <Button
-                android:id="@+id/btnSyncUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User Sync"/>
+                android:text="Select Entity"/>
 
         </LinearLayout>
 
