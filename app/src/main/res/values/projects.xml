@@ -50,4 +50,28 @@
         <item>ITEM 05</item>
     </string-array>
 
+    <string-array name="punchgrouplist">
+        <item>PUNCH 01</item>
+        <item>PUNCH 02</item>
+        <item>PUNCH 03</item>
+        <item>PUNCH 04</item>
+        <item>PUNCH 05</item>
+    </string-array>
+
+    <string-array name="discipinelist">
+        <item>DISCIPLINE 01</item>
+        <item>DISCIPLINE 02</item>
+        <item>DISCIPLINE 03</item>
+        <item>DISCIPLINE 04</item>
+        <item>DISCIPLINE 05</item>
+    </string-array>
+
+    <string-array name="prioritylist">
+        <item>PRIORITY 01</item>
+        <item>PRIORITY 02</item>
+        <item>PRIORITY 03</item>
+        <item>PRIORITY 04</item>
+        <item>PRIORITY 05</item>
+    </string-array>
+
 </resources>

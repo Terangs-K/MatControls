@@ -1,15 +1,15 @@
 package com.example.c07656.matcontrols;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class SelectEntityActivity extends AppCompatActivity {
+public class SelectEntityActivity extends Activity {
 
     ArrayAdapter adapter;
 
@@ -44,5 +44,14 @@ public class SelectEntityActivity extends AppCompatActivity {
         adapter = ArrayAdapter.createFromResource(this, R.array.itemlist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner05.setAdapter(adapter);
+
+        Button btnSaveEntity = (Button) findViewById(R.id.btnSaveEntity);
+        btnSaveEntity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SelectEntityActivity.this, InputFormActivity.class);
+                SelectEntityActivity.this.startActivity(i);
+            }
+        });
     }
 }

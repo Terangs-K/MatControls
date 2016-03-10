@@ -57,154 +57,155 @@
         android:layout_above="@+id/linBottom"
         android:padding="20dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/textNewPunch"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Entity"
+                android:text="New Punch"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:gravity="center"
-                android:layout_marginBottom="30dp"/>
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"/>
 
             <LinearLayout
+                android:id="@+id/linPunchGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginBottom="25dp">
+                android:layout_below="@+id/textNewPunch"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Unit"/>
+                    android:text="Punch Group"/>
 
                 <Spinner
-                    android:id="@+id/listUnit"
+                    android:id="@+id/listPunchGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:prompt="@string/project_unit"/>
+                    android:prompt="@string/project_punchgroup"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linDiscipline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginBottom="25dp">
+                android:layout_below="@+id/linPunchGroup"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="System"/>
+                    android:text="Discipline"/>
 
                 <Spinner
-                    android:id="@+id/listSystem"
+                    android:id="@+id/listDiscipline"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:prompt="@string/project_system"/>
+                    android:prompt="@string/project_discipline"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linPriority"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginBottom="25dp">
+                android:layout_below="@+id/linDiscipline"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Sub System"/>
+                    android:text="Priority"/>
 
                 <Spinner
-                    android:id="@+id/listSubSystem"
+                    android:id="@+id/listPriority"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:prompt="@string/project_subsystem"/>
+                    android:prompt="@string/project_priority"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginBottom="25dp">
+                android:layout_below="@+id/linPriority"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Item Group"/>
+                    android:text="Description"/>
 
-                <Spinner
-                    android:id="@+id/listItemGroup"
+                <EditText
+                    android:id="@+id/editDescription"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:prompt="@string/project_itemgroup"/>
+                    android:layout_weight="1"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginBottom="25dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Item"/>
-
-                <Spinner
-                    android:id="@+id/listItem"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:prompt="@string/project_item"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_above="@+id/editImgList"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnSaveEntity"
+                    android:id="@+id/btnSaveGallery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="OK"/>
+                    android:text="Gallery"/>
 
                 <Button
-                    android:id="@+id/btnSelectEntity"
+                    android:id="@+id/btnSaveCamera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cancel"/>
+                    android:text="Camera"/>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <EditText
+                android:id="@+id/editImgList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnSavePunch"
+                android:textSize="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnSavePunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="Save"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 

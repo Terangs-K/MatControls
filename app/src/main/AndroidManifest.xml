@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.c07656.matcontrols" >
 
+    <uses-feature android:name="android.hardware.Camera2"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +23,7 @@
         <activity android:name=".HomeActivity"/>
         <activity android:name=".NewPunchActivity"/>
         <activity android:name=".SelectEntityActivity"/>
+        <activity android:name=".InputFormActivity"/>
     </application>
 
 </manifest>
