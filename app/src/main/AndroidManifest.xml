@@ -24,6 +24,7 @@
         <activity android:name=".NewPunchActivity"/>
         <activity android:name=".SelectEntityActivity"/>
         <activity android:name=".InputFormActivity"/>
+        <activity android:name=".NotClearActivity"/>
 
         <activity
             android:configChanges="orientation|screenSize"

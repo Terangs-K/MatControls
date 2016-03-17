@@ -16,10 +16,20 @@ public class HomeActivity extends Activity {
         Log.d("MatHomeActivity", "Init Home Activity!!");
 
         Button btnPunchNew = (Button) findViewById(R.id.btnPunchNew);
+        Button btnPunchNotClas = (Button) findViewById(R.id.btnPunchNotCls);
+
         btnPunchNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, NewPunchActivity.class);
+                HomeActivity.this.startActivity(i);
+            }
+        });
+
+        btnPunchNotClas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, NotClearActivity.class);
                 HomeActivity.this.startActivity(i);
             }
         });
