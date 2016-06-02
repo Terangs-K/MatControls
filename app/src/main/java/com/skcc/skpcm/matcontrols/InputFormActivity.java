@@ -1,7 +1,6 @@
-package com.example.c07656.matcontrols;
+package com.skcc.skpcm.matcontrols;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,22 +12,25 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.aviary.android.feather.library.Constants;
+import com.aviary.android.feather.sdk.FeatherActivity;
 
 import java.util.ArrayList;
 
 import me.nereo.multi_image_selector.MultiImageSelectorActivity;
-import me.nereo.multi_image_selector.utils.FileUtils;
 
 public class InputFormActivity extends Activity {
 
     ArrayAdapter adapter;
     ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10;
 
-    private int TAKE_CAMERA = 1;
-    private int TAKE_GALLERY = 2;
+    private int TAKE_AVIARY = 1;
+    private int TAKE_CAMERA = 2;
+    private int TAKE_GALLERY = 3;
+    private int AVIARY_INDEX = 0;
     private ArrayList<String> mSelectPath;
 
     @Override
@@ -36,6 +38,8 @@ public class InputFormActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inputform);
         Log.d("MatInputFormActivity", "Init InputForm Activity!!");
+
+        mSelectPath = new ArrayList<String>(10);
 
         Spinner spinner01 = (Spinner) findViewById(R.id.listPunchGroup);
         Spinner spinner02 = (Spinner) findViewById(R.id.listDiscipline);
@@ -92,13 +96,44 @@ public class InputFormActivity extends Activity {
                 startActivityForResult(i, TAKE_GALLERY);
             }
         });
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AVIARY_INDEX = 0;
+                Intent newIntent = new Intent(InputFormActivity.this, FeatherActivity.class );
+                newIntent.setData( Uri.parse((mSelectPath.get(0))));
+                newIntent.putExtra( Constants.EXTRA_IN_API_KEY_SECRET, "5ab01a3e-43ff-449a-a0b7-6e0b30335fe2" );
+                startActivityForResult( newIntent, TAKE_AVIARY );
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(resultCode == RESULT_OK){
-            if(requestCode == TAKE_CAMERA){
+            if(requestCode == TAKE_AVIARY) {
+                // output image path
+                Uri mImageUri = data.getData();
+                Bundle extra = data.getExtras();
+                if( null != extra ) {
+                    // image has been changed by the user?
+                    boolean changed = extra.getBoolean( Constants.EXTRA_OUT_BITMAP_CHANGED );
+                }
+
+                try {
+                    switch(AVIARY_INDEX) {
+                        case 0:
+                            img1.setImageURI(mImageUri);
+                            mSelectPath.set(0, mImageUri.toString());
+                            break;
+                    }
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }else if(requestCode == TAKE_CAMERA){
                 Uri currImageURI = data.getData();
+                mSelectPath.add(0, getRealPathFromURI(currImageURI));
                 img1.setImageURI(currImageURI);
             } else if (requestCode == TAKE_GALLERY){
 
@@ -194,11 +229,11 @@ public class InputFormActivity extends Activity {
 
     public String getRealPathFromURI(Uri contentUri){
         String [] proj={MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery( contentUri, proj, null, null, null);
+        Cursor cursor = getContentResolver().query( contentUri, proj, null, null, null);
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
-        return cursor.getString(column_index);
 
+        return cursor.getString(column_index);
     }
 
     public static Bitmap loadFilePathtoBitmap(String filePath) throws Exception, OutOfMemoryError {

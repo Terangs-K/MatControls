@@ -1,9 +1,6 @@
-package com.example.c07656.matcontrols;
+package com.skcc.skpcm.matcontrols;
 
 import android.graphics.drawable.Drawable;
-
-import java.text.Collator;
-import java.util.Comparator;
 
 /**
  * Created by C07656 on 2016-03-17.

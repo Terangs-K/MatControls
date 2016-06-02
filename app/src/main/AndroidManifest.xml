@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.c07656.matcontrols" >
+    package="com.skcc.skpcm.matcontrols" >
 
     <uses-feature android:name="android.hardware.Camera2"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity" >
+            android:name="com.skcc.skpcm.matcontrols.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,15 +21,73 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity"/>
-        <activity android:name=".NewPunchActivity"/>
-        <activity android:name=".SelectEntityActivity"/>
-        <activity android:name=".InputFormActivity"/>
-        <activity android:name=".NotClearActivity"/>
+        <activity android:name="com.skcc.skpcm.matcontrols.HomeActivity"/>
+        <activity android:name="com.skcc.skpcm.matcontrols.NewPunchActivity"/>
+        <activity android:name="com.skcc.skpcm.matcontrols.SelectEntityActivity"/>
+        <activity android:name="com.skcc.skpcm.matcontrols.InputFormActivity"/>
+        <activity android:name="com.skcc.skpcm.matcontrols.NotClearActivity"/>
 
         <activity
             android:configChanges="orientation|screenSize"
             android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity" />
+
+
+
+        <!-- Aviary Contents Start -->
+
+        <activity
+            android:name="com.aviary.android.feather.sdk.FeatherActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:largeHeap="true"
+            android:process=":aviarysdk"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AviaryTheme.Dark" />
+
+        <service
+            android:name="com.aviary.android.feather.cds.AviaryCdsService"
+            android:exported="false"
+            android:process=":aviarycds" >
+            <intent-filter>
+                <action android:name="aviary.intent.action.CDS_DOWNLOAD_START" />
+                <action android:name="aviary.intent.action.CDS_RESTORE_USER_ITEMS" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="aviary.intent.action.CDS_DOWNLOAD_START" />
+                <action android:name="aviary.intent.action.CDS_RESTORE_USER_ITEMS" />
+                <action android:name="aviary.intent.action.CDS_RESTORE_OWNED_PACKS" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.aviary.android.feather.cds.AviaryCdsProvider"
+            android:authorities="com.skcc.skpcm.matcontrols.AviaryCdsProvider"
+            android:exported="false"
+            android:process=":aviarycds"
+            android:syncable="true" />
+
+        <receiver
+            android:name="com.aviary.android.feather.cds.AviaryCdsReceiver"
+            android:exported="true"
+            android:permission="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS"
+            android:process=":aviarycds" >
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.aviary.android.feather.v1.API_KEY"
+            android:value="b957b0ddf7c74ac6bbaeaf0fe3436973" />
+
+        <!-- Aviary Contents End -->
     </application>
 
 </manifest>
